@@ -38,7 +38,7 @@ public class CarBrandController {
      * @param id CarBrand id to delete
      * @return CarBrand ResponseEntity
      */
-    @GetMapping("/{id}")
+    @GetMapping(path = "/{id}")
     public ResponseEntity<CarBrandPojo> getCarBrand(@PathVariable Integer id) {
         return ResponseEntity.of(iCarBrandService.getCarBrand(id));
     }
@@ -47,7 +47,7 @@ public class CarBrandController {
      * Create CarBrand
      *
      * @param carBrandPojo CarBrand to save
-     * @return CarBrand created
+     * @return CarBrand created if correct json, or Bad Request if not correct json
      */
     @PostMapping
     public ResponseEntity<CarBrandPojo> save(@RequestBody CarBrandPojo carBrandPojo) {
@@ -58,15 +58,26 @@ public class CarBrandController {
         }
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Boolean> delete(@PathVariable Integer id) {
-        if (iCarBrandService.delete(id)) {
-            return ResponseEntity.status(204).body(null);
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
-
+    /**
+     * Update CarBrand
+     *
+     * @param carBrandPojo CarBrand to update
+     * @return CarBrand updated
+     */
+    @PutMapping
+    public ResponseEntity<CarBrandPojo> update(@RequestBody CarBrandPojo carBrandPojo) {
+        return ResponseEntity.status(HttpStatus.OK).body(iCarBrandService.save(carBrandPojo));
     }
 
+    /**
+     * Delete CarBrand
+     *
+     * @param id CarBrand id
+     * @return status code for check
+     */
+    @DeleteMapping(path = "/{id}")
+    public ResponseEntity<Boolean> delete(@PathVariable Integer id) {
+        return ResponseEntity.status(iCarBrandService.delete(id) ? HttpStatus.OK : HttpStatus.NOT_FOUND).body(null);
+    }
 
 }
