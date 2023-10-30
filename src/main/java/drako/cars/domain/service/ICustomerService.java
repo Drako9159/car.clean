@@ -1,6 +1,7 @@
 package drako.cars.domain.service;
 
 import drako.cars.domain.dto.CustomerDto;
+import drako.cars.domain.dto.CustomerResponseDto;
 
 import java.util.List;
 import java.util.Optional;
@@ -37,7 +38,7 @@ public interface ICustomerService {
      * @param customerDto Customer to save
      * @return Customer
      */
-    CustomerDto save(CustomerDto customerDto);
+    CustomerResponseDto save(CustomerDto customerDto);
 
     /**
      * Update a Customer

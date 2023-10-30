@@ -1,6 +1,7 @@
 package drako.cars.domain.service;
 
 import drako.cars.domain.dto.CustomerDto;
+import drako.cars.domain.dto.CustomerResponseDto;
 import drako.cars.domain.repository.ICustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -34,9 +35,12 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public CustomerDto save(CustomerDto customerDto) {
-        customerDto.setPassword(generateRandomPassword(12));
-        return iCustomerRepository.save(customerDto);
+    public CustomerResponseDto save(CustomerDto customerDto) {
+        String passwordGenerated = generateRandomPassword(12);
+        customerDto.setPassword(passwordGenerated);
+        customerDto.setActive(1);
+        iCustomerRepository.save(customerDto);
+        return new CustomerResponseDto(passwordGenerated);
     }
 
     @Override
