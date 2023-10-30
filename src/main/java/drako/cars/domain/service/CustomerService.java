@@ -3,6 +3,7 @@ package drako.cars.domain.service;
 import drako.cars.domain.dto.CustomerDto;
 import drako.cars.domain.dto.CustomerResponseDto;
 import drako.cars.domain.repository.ICustomerRepository;
+import drako.cars.exception.EmailValidationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -36,6 +37,13 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public CustomerResponseDto save(CustomerDto customerDto) {
+
+        if (!customerDto.getEmail().matches("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
+                + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$"
+        )) {
+            throw new EmailValidationException();
+        }
+
         String passwordGenerated = generateRandomPassword(12);
         customerDto.setPassword(passwordGenerated);
         customerDto.setActive(1);
