@@ -40,10 +40,18 @@ public interface ICustomerService {
     CustomerDto save(CustomerDto customerDto);
 
     /**
+     * Update a Customer
+     *
+     * @param customerDto CarBrand to delete
+     * @return CarBrand updated
+     */
+    Optional<CustomerDto> update(CustomerDto customerDto);
+
+    /**
      * Delete a Customer by id
      *
      * @param cardId Customer to delete
      */
-    void delete(String cardId);
+    boolean delete(String cardId);
 
 }
