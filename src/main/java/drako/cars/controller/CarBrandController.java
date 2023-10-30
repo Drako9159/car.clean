@@ -66,7 +66,7 @@ public class CarBrandController {
      */
     @PutMapping
     public ResponseEntity<CarBrandPojo> update(@RequestBody CarBrandPojo carBrandPojo) {
-        return ResponseEntity.status(HttpStatus.OK).body(iCarBrandService.save(carBrandPojo));
+        return ResponseEntity.of(iCarBrandService.update(carBrandPojo));
     }
 
     /**

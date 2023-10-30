@@ -23,9 +23,17 @@ public interface ICarBrandService {
      * Save new CarBrand
      *
      * @param newCarBrand CarBrand to save
-     * @return CarBrand
+     * @return CarBrand created
      */
     CarBrandPojo save(CarBrandPojo newCarBrand);
+
+    /**
+     * Update a CarBrand
+     *
+     * @param updateCarBrand CarBrand to delete
+     * @return CarBrand updated
+     */
+    Optional<CarBrandPojo> update(CarBrandPojo updateCarBrand);
 
     /**
      * Delete a CarBrand by id

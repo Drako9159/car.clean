@@ -47,11 +47,25 @@ public class CarBrandService implements ICarBrandService {
      * Save a CarBrand
      *
      * @param newCarBrand CarBrand to save
-     * @return CarBrand saved
+     * @return CarBrand created
      */
     @Override
     public CarBrandPojo save(CarBrandPojo newCarBrand) {
         return iCarBrandRepository.save(newCarBrand);
+    }
+
+    /**
+     * Update a CarBrand
+     *
+     * @param updateCarBrand CarBrand to update
+     * @return CarBrand updated if exists, return not found if not exists
+     */
+    @Override
+    public Optional<CarBrandPojo> update(CarBrandPojo updateCarBrand) {
+        if (iCarBrandRepository.getCarBrand(updateCarBrand.getId()).isEmpty()) {
+            return Optional.empty();
+        }
+        return Optional.of(iCarBrandRepository.save(updateCarBrand));
     }
 
     /**
@@ -62,11 +76,10 @@ public class CarBrandService implements ICarBrandService {
      */
     @Override
     public boolean delete(Integer idCarBrand) {
-        try {
-            iCarBrandRepository.delete(idCarBrand);
-            return true;
-        } catch (Exception e) {
+        if (iCarBrandRepository.getCarBrand(idCarBrand).isEmpty()) {
             return false;
         }
+        iCarBrandRepository.delete(idCarBrand);
+        return true;
     }
 }
