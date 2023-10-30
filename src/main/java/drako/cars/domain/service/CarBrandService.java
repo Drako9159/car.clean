@@ -1,6 +1,6 @@
 package drako.cars.domain.service;
 
-import drako.cars.domain.pojo.CarBrandPojo;
+import drako.cars.domain.pojo.CarBrandDto;
 import drako.cars.domain.repository.ICarBrandRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -28,7 +28,7 @@ public class CarBrandService implements ICarBrandService {
      * @return List of CarBrand
      */
     @Override
-    public List<CarBrandPojo> getAll() {
+    public List<CarBrandDto> getAll() {
         return iCarBrandRepository.getAll();
     }
 
@@ -39,7 +39,7 @@ public class CarBrandService implements ICarBrandService {
      * @return CarBrand
      */
     @Override
-    public Optional<CarBrandPojo> getCarBrand(Integer id) {
+    public Optional<CarBrandDto> getCarBrand(Integer id) {
         return iCarBrandRepository.getCarBrand(id);
     }
 
@@ -50,7 +50,7 @@ public class CarBrandService implements ICarBrandService {
      * @return CarBrand created
      */
     @Override
-    public CarBrandPojo save(CarBrandPojo newCarBrand) {
+    public CarBrandDto save(CarBrandDto newCarBrand) {
         return iCarBrandRepository.save(newCarBrand);
     }
 
@@ -61,7 +61,7 @@ public class CarBrandService implements ICarBrandService {
      * @return CarBrand updated if exists, return not found if not exists
      */
     @Override
-    public Optional<CarBrandPojo> update(CarBrandPojo updateCarBrand) {
+    public Optional<CarBrandDto> update(CarBrandDto updateCarBrand) {
         if (iCarBrandRepository.getCarBrand(updateCarBrand.getId()).isEmpty()) {
             return Optional.empty();
         }

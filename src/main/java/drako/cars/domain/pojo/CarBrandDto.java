@@ -8,7 +8,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class CarBrandPojo {
+public class CarBrandDto {
     /**
      * id for brand
      */

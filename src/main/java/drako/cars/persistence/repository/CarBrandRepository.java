@@ -1,6 +1,6 @@
 package drako.cars.persistence.repository;
 
-import drako.cars.domain.pojo.CarBrandPojo;
+import drako.cars.domain.pojo.CarBrandDto;
 import drako.cars.domain.repository.ICarBrandRepository;
 import drako.cars.persistence.entity.CarBrandEntity;
 import drako.cars.persistence.mapper.ICarBrandMapper;
@@ -33,7 +33,7 @@ public class CarBrandRepository implements ICarBrandRepository {
      * @return list of CarBrand
      */
     @Override
-    public List<CarBrandPojo> getAll() {
+    public List<CarBrandDto> getAll() {
         return iCarBrandMapper.toCarBrandsPojo(iCarBrandCrudRepository.findAll());
     }
 
@@ -44,7 +44,7 @@ public class CarBrandRepository implements ICarBrandRepository {
      * @return CarBrand
      */
     @Override
-    public Optional<CarBrandPojo> getCarBrand(Integer id) {
+    public Optional<CarBrandDto> getCarBrand(Integer id) {
         return iCarBrandCrudRepository.findById(id).map(iCarBrandMapper::toCarBrandPojo);
     }
 
@@ -55,7 +55,7 @@ public class CarBrandRepository implements ICarBrandRepository {
      * @return CarBrand created
      */
     @Override
-    public CarBrandPojo save(CarBrandPojo newCarBrand) {
+    public CarBrandDto save(CarBrandDto newCarBrand) {
         CarBrandEntity carBrandEntity = iCarBrandMapper.toCarBrandEntity(newCarBrand);
         return iCarBrandMapper.toCarBrandPojo(iCarBrandCrudRepository.save(carBrandEntity));
     }

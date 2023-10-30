@@ -1,6 +1,6 @@
 package drako.cars.domain.service;
 
-import drako.cars.domain.pojo.CarBrandPojo;
+import drako.cars.domain.pojo.CarBrandDto;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,7 +9,7 @@ public interface ICarBrandService {
     /**
      * @return List car brands
      */
-    List<CarBrandPojo> getAll();
+    List<CarBrandDto> getAll();
 
     /**
      * Return a CarBrand by id
@@ -17,7 +17,7 @@ public interface ICarBrandService {
      * @param id
      * @return Option CarBrand found
      */
-    Optional<CarBrandPojo> getCarBrand(Integer id);
+    Optional<CarBrandDto> getCarBrand(Integer id);
 
     /**
      * Save new CarBrand
@@ -25,7 +25,7 @@ public interface ICarBrandService {
      * @param newCarBrand CarBrand to save
      * @return CarBrand created
      */
-    CarBrandPojo save(CarBrandPojo newCarBrand);
+    CarBrandDto save(CarBrandDto newCarBrand);
 
     /**
      * Update a CarBrand
@@ -33,7 +33,7 @@ public interface ICarBrandService {
      * @param updateCarBrand CarBrand to delete
      * @return CarBrand updated
      */
-    Optional<CarBrandPojo> update(CarBrandPojo updateCarBrand);
+    Optional<CarBrandDto> update(CarBrandDto updateCarBrand);
 
     /**
      * Delete a CarBrand by id

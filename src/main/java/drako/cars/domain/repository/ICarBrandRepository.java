@@ -1,7 +1,7 @@
 package drako.cars.domain.repository;
 
 
-import drako.cars.domain.pojo.CarBrandPojo;
+import drako.cars.domain.pojo.CarBrandDto;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,7 +11,7 @@ public interface ICarBrandRepository {
     /**
      * @return List car brands
      */
-    List<CarBrandPojo> getAll();
+    List<CarBrandDto> getAll();
 
     /**
      * Return a CarBrand by id
@@ -19,7 +19,7 @@ public interface ICarBrandRepository {
      * @param id
      * @return Option CarBrand found
      */
-    Optional<CarBrandPojo> getCarBrand(Integer id);
+    Optional<CarBrandDto> getCarBrand(Integer id);
 
     /**
      * Save new CarBrand
@@ -27,7 +27,7 @@ public interface ICarBrandRepository {
      * @param newCarBrand CarBrand to save
      * @return CarBrand
      */
-    CarBrandPojo save(CarBrandPojo newCarBrand);
+    CarBrandDto save(CarBrandDto newCarBrand);
 
     /**
      * Delete a CarBrand by id

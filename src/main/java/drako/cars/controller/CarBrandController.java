@@ -1,6 +1,6 @@
 package drako.cars.controller;
 
-import drako.cars.domain.pojo.CarBrandPojo;
+import drako.cars.domain.pojo.CarBrandDto;
 import drako.cars.domain.service.ICarBrandService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -28,7 +28,7 @@ public class CarBrandController {
      * @return List ResponseEntity of CarBrands
      */
     @GetMapping
-    public ResponseEntity<List<CarBrandPojo>> getAll() {
+    public ResponseEntity<List<CarBrandDto>> getAll() {
         return ResponseEntity.status(HttpStatus.OK).body(iCarBrandService.getAll());
     }
 
@@ -39,20 +39,20 @@ public class CarBrandController {
      * @return CarBrand ResponseEntity
      */
     @GetMapping(path = "/{id}")
-    public ResponseEntity<CarBrandPojo> getCarBrand(@PathVariable Integer id) {
+    public ResponseEntity<CarBrandDto> getCarBrand(@PathVariable Integer id) {
         return ResponseEntity.of(iCarBrandService.getCarBrand(id));
     }
 
     /**
      * Create CarBrand
      *
-     * @param carBrandPojo CarBrand to save
+     * @param carBrandDto CarBrand to save
      * @return CarBrand created if correct json, or Bad Request if not correct json
      */
     @PostMapping
-    public ResponseEntity<CarBrandPojo> save(@RequestBody CarBrandPojo carBrandPojo) {
+    public ResponseEntity<CarBrandDto> save(@RequestBody CarBrandDto carBrandDto) {
         try {
-            return ResponseEntity.status(HttpStatus.CREATED).body(iCarBrandService.save(carBrandPojo));
+            return ResponseEntity.status(HttpStatus.CREATED).body(iCarBrandService.save(carBrandDto));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
@@ -61,12 +61,12 @@ public class CarBrandController {
     /**
      * Update CarBrand
      *
-     * @param carBrandPojo CarBrand to update
+     * @param carBrandDto CarBrand to update
      * @return CarBrand updated
      */
     @PutMapping
-    public ResponseEntity<CarBrandPojo> update(@RequestBody CarBrandPojo carBrandPojo) {
-        return ResponseEntity.of(iCarBrandService.update(carBrandPojo));
+    public ResponseEntity<CarBrandDto> update(@RequestBody CarBrandDto carBrandDto) {
+        return ResponseEntity.of(iCarBrandService.update(carBrandDto));
     }
 
     /**

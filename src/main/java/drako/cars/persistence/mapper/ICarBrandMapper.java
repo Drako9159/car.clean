@@ -1,6 +1,6 @@
 package drako.cars.persistence.mapper;
 
-import drako.cars.domain.pojo.CarBrandPojo;
+import drako.cars.domain.pojo.CarBrandDto;
 import drako.cars.persistence.entity.CarBrandEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -24,7 +24,7 @@ public interface ICarBrandMapper {
      */
     @Mapping(source = "id", target = "id")
     @Mapping(source = "description", target = "description")
-    CarBrandPojo toCarBrandPojo(CarBrandEntity brandEntity);
+    CarBrandDto toCarBrandPojo(CarBrandEntity brandEntity);
 
     /**
      * Convert pojo to CarBrandEntity
@@ -33,7 +33,7 @@ public interface ICarBrandMapper {
      * @return entity converted
      */
     @InheritInverseConfiguration
-    CarBrandEntity toCarBrandEntity(CarBrandPojo brandPojo);
+    CarBrandEntity toCarBrandEntity(CarBrandDto brandPojo);
 
     /**
      * Get list of car brand transformed to pojo of list entities
@@ -41,5 +41,5 @@ public interface ICarBrandMapper {
      * @param carBrandsEntity Entity for transform
      * @return list transformed
      */
-    List<CarBrandPojo> toCarBrandsPojo(List<CarBrandEntity> carBrandsEntity);
+    List<CarBrandDto> toCarBrandsPojo(List<CarBrandEntity> carBrandsEntity);
 }
