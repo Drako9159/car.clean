@@ -33,6 +33,7 @@ public interface ICarBrandMapper {
      * @return entity converted
      */
     @InheritInverseConfiguration
+    @Mapping(target = "carEntityList", ignore = true)
     CarBrandEntity toCarBrandEntity(CarBrandDto brandDto);
 
     /**

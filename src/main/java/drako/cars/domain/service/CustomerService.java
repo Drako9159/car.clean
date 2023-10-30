@@ -37,10 +37,11 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public CustomerResponseDto save(CustomerDto customerDto) {
+        String regexEmail = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
+                + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
 
-        if (!customerDto.getEmail().matches("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
-                + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$"
-        )) {
+
+        if (!customerDto.getEmail().matches(regexEmail)) {
             throw new EmailValidationException();
         }
 
