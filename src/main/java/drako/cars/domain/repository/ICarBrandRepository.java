@@ -1,11 +1,14 @@
 package drako.cars.domain.repository;
 
 
-import drako.cars.domain.pojo.CarBrandDto;
+import drako.cars.domain.dto.CarBrandDto;
 
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Interface for repository CarBrand
+ */
 public interface ICarBrandRepository {
 
     /**

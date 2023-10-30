@@ -1,6 +1,6 @@
 package drako.cars.controller;
 
-import drako.cars.domain.pojo.CarBrandDto;
+import drako.cars.domain.dto.CarBrandDto;
 import drako.cars.domain.service.ICarBrandService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

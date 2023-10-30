@@ -1,10 +1,13 @@
 package drako.cars.domain.service;
 
-import drako.cars.domain.pojo.CarBrandDto;
+import drako.cars.domain.dto.CarBrandDto;
 
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Interface for service CarBrad
+ */
 public interface ICarBrandService {
     /**
      * @return List car brands

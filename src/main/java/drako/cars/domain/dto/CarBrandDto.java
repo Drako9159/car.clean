@@ -1,10 +1,10 @@
-package drako.cars.domain.pojo;
+package drako.cars.domain.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Pojo for car brand
+ * Dto for car brands
  */
 @Getter
 @Setter

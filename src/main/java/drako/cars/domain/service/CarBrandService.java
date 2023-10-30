@@ -1,6 +1,6 @@
 package drako.cars.domain.service;
 
-import drako.cars.domain.pojo.CarBrandDto;
+import drako.cars.domain.dto.CarBrandDto;
 import drako.cars.domain.repository.ICarBrandRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

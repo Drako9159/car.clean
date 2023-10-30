@@ -1,6 +1,6 @@
 package drako.cars.persistence.repository;
 
-import drako.cars.domain.pojo.CarBrandDto;
+import drako.cars.domain.dto.CarBrandDto;
 import drako.cars.domain.repository.ICarBrandRepository;
 import drako.cars.persistence.entity.CarBrandEntity;
 import drako.cars.persistence.mapper.ICarBrandMapper;
@@ -34,7 +34,7 @@ public class CarBrandRepository implements ICarBrandRepository {
      */
     @Override
     public List<CarBrandDto> getAll() {
-        return iCarBrandMapper.toCarBrandsPojo(iCarBrandCrudRepository.findAll());
+        return iCarBrandMapper.toCarBrandsDto(iCarBrandCrudRepository.findAll());
     }
 
     /**
@@ -45,7 +45,7 @@ public class CarBrandRepository implements ICarBrandRepository {
      */
     @Override
     public Optional<CarBrandDto> getCarBrand(Integer id) {
-        return iCarBrandCrudRepository.findById(id).map(iCarBrandMapper::toCarBrandPojo);
+        return iCarBrandCrudRepository.findById(id).map(iCarBrandMapper::toCarBrandDto);
     }
 
     /**
@@ -57,7 +57,7 @@ public class CarBrandRepository implements ICarBrandRepository {
     @Override
     public CarBrandDto save(CarBrandDto newCarBrand) {
         CarBrandEntity carBrandEntity = iCarBrandMapper.toCarBrandEntity(newCarBrand);
-        return iCarBrandMapper.toCarBrandPojo(iCarBrandCrudRepository.save(carBrandEntity));
+        return iCarBrandMapper.toCarBrandDto(iCarBrandCrudRepository.save(carBrandEntity));
     }
 
     /**
