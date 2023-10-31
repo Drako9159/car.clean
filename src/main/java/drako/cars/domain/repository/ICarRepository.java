@@ -26,7 +26,7 @@ public interface ICarRepository {
      * @param price
      * @return List Car by LessThan
      */
-    List<CarDto> getCarByPriceLessThan(Double price);
+    List<CarDto> getCarsByPriceLessThan(Double price);
 
     /**
      * Return a Car by id

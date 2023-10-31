@@ -26,8 +26,8 @@ public class CarService implements ICarUseCase {
     }
 
     @Override
-    public List<CarDto> getCarByPriceLessThan(Double price) {
-        return iCarRepository.getCarByPriceLessThan(price);
+    public List<CarDto> getCarsByPriceLessThan(Double price) {
+        return iCarRepository.getCarsByPriceLessThan(price);
     }
 
     @Override
