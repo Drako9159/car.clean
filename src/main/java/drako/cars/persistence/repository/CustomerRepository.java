@@ -4,6 +4,7 @@ import drako.cars.domain.dto.CustomerDto;
 import drako.cars.domain.repository.ICustomerRepository;
 import drako.cars.persistence.entity.CustomerEntity;
 import drako.cars.persistence.mapper.ICustomerMapper;
+import drako.cars.persistence.repository.crud.ICustomerCrudRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

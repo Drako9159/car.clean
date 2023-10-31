@@ -1,4 +1,4 @@
-package drako.cars.persistence.repository;
+package drako.cars.persistence.repository.crud;
 
 import drako.cars.persistence.entity.CustomerEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

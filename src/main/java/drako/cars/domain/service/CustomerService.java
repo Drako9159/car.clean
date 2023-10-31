@@ -3,6 +3,7 @@ package drako.cars.domain.service;
 import drako.cars.domain.dto.CustomerDto;
 import drako.cars.domain.dto.CustomerResponseDto;
 import drako.cars.domain.repository.ICustomerRepository;
+import drako.cars.domain.service.usecase.ICustomerService;
 import drako.cars.exception.EmailValidationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

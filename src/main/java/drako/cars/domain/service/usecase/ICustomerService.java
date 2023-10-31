@@ -1,4 +1,4 @@
-package drako.cars.domain.service;
+package drako.cars.domain.service.usecase;
 
 import drako.cars.domain.dto.CustomerDto;
 import drako.cars.domain.dto.CustomerResponseDto;

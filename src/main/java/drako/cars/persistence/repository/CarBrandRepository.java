@@ -4,6 +4,7 @@ import drako.cars.domain.dto.CarBrandDto;
 import drako.cars.domain.repository.ICarBrandRepository;
 import drako.cars.persistence.entity.CarBrandEntity;
 import drako.cars.persistence.mapper.ICarBrandMapper;
+import drako.cars.persistence.repository.crud.ICarBrandCrudRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

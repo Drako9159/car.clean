@@ -2,7 +2,7 @@ package drako.cars.controller;
 
 import drako.cars.domain.dto.CustomerDto;
 import drako.cars.domain.dto.CustomerResponseDto;
-import drako.cars.domain.service.ICustomerService;
+import drako.cars.domain.service.usecase.ICustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
