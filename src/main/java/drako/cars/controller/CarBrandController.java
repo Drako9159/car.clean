@@ -1,7 +1,7 @@
 package drako.cars.controller;
 
 import drako.cars.domain.dto.CarBrandDto;
-import drako.cars.domain.service.usecase.ICarBrandService;
+import drako.cars.domain.usecase.ICarBrandUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +20,7 @@ public class CarBrandController {
     /**
      * Service CarBrand
      */
-    private final ICarBrandService iCarBrandService;
+    private final ICarBrandUseCase iCarBrandService;
 
     /**
      * Return all CarBrands

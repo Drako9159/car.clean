@@ -1,11 +1,11 @@
-package drako.cars.domain.service.usecase;
+package drako.cars.domain.usecase;
 
 import drako.cars.domain.dto.CarDto;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface ICarService {
+public interface ICarUseCase {
     /**
      * @return List car
      */
@@ -14,10 +14,10 @@ public interface ICarService {
     /**
      * Return a List Car
      *
-     * @param idCar
+     * @param idCarBrand
      * @return List Car by CarBrand
      */
-    List<CarDto> getCarsByCarBrandId(Integer idCar);
+    List<CarDto> getCarsByCarBrandId(Integer idCarBrand);
 
     /**
      * Return a List Car

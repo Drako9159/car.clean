@@ -1,4 +1,4 @@
-package drako.cars.domain.service.usecase;
+package drako.cars.domain.usecase;
 
 import drako.cars.domain.dto.CustomerDto;
 import drako.cars.domain.dto.CustomerResponseDto;
@@ -9,7 +9,7 @@ import java.util.Optional;
 /**
  * Interface for Customer service
  */
-public interface ICustomerService {
+public interface ICustomerUseCase {
 
     /**
      * @return List of customer

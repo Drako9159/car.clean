@@ -1,4 +1,4 @@
-package drako.cars.domain.service.usecase;
+package drako.cars.domain.usecase;
 
 import drako.cars.domain.dto.CarBrandDto;
 
@@ -8,7 +8,7 @@ import java.util.Optional;
 /**
  * Interface for service CarBrad
  */
-public interface ICarBrandService {
+public interface ICarBrandUseCase {
     /**
      * @return List car brands
      */

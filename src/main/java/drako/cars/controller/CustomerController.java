@@ -2,7 +2,7 @@ package drako.cars.controller;
 
 import drako.cars.domain.dto.CustomerDto;
 import drako.cars.domain.dto.CustomerResponseDto;
-import drako.cars.domain.service.usecase.ICustomerService;
+import drako.cars.domain.usecase.ICustomerUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping(path = "/customers")
 public class CustomerController {
 
-    private final ICustomerService iCustomerService;
+    private final ICustomerUseCase iCustomerService;
 
 
     @GetMapping

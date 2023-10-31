@@ -2,7 +2,7 @@ package drako.cars.domain.service;
 
 import drako.cars.domain.dto.CarBrandDto;
 import drako.cars.domain.repository.ICarBrandRepository;
-import drako.cars.domain.service.usecase.ICarBrandService;
+import drako.cars.domain.usecase.ICarBrandUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,7 @@ import java.util.Optional;
  */
 @Service
 @RequiredArgsConstructor
-public class CarBrandService implements ICarBrandService {
+public class CarBrandService implements ICarBrandUseCase {
 
     /**
      * Repository CarBrand
