@@ -7,12 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class CarPurchaseResponseDto {
-
-    private String referenceCar;
-
-    private Integer quantity;
-
-    private Integer total;
-
+public class PurchaseBillResponseDto {
+    private Integer numberBill;
 }

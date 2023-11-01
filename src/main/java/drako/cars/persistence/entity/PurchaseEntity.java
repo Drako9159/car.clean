@@ -19,7 +19,7 @@ public class PurchaseEntity {
     private Integer numberBill;
 
     @Column(name = "id_card_customer")
-    private String carIdCustomer;
+    private String cardIdCustomer;
 
     @Column(name = "date")
     @Temporal(TemporalType.TIMESTAMP)

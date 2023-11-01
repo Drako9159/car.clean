@@ -64,6 +64,8 @@ public class CarEntity {
     @Column(name = "image_path")
     private String imagePath;
 
+    private Integer stock;
+
     @ManyToOne
     @JoinColumn(name = "car_brand", insertable = false, updatable = false)
     private CarBrandEntity carBrandEntity;

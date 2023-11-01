@@ -11,7 +11,7 @@ import java.util.List;
 public class PurchaseRequestDto {
     private Integer numberBill;
 
-    private String carIdCustomer;
+    private String cardIdCustomer;
 
     private LocalDateTime date;
 
