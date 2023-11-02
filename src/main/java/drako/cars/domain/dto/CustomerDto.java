@@ -22,4 +22,6 @@ public class CustomerDto {
 
     private String password;
 
+    private String rol;
+
 }

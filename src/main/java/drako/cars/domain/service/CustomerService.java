@@ -5,7 +5,9 @@ import drako.cars.domain.dto.CustomerResponseDto;
 import drako.cars.domain.repository.ICustomerRepository;
 import drako.cars.domain.usecase.ICustomerUseCase;
 import drako.cars.exception.EmailValidationException;
+import drako.cars.security.Roles;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
@@ -20,6 +22,8 @@ import java.util.Optional;
 public class CustomerService implements ICustomerUseCase {
 
     private final ICustomerRepository iCustomerRepository;
+
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public List<CustomerDto> getAll() {
@@ -47,8 +51,9 @@ public class CustomerService implements ICustomerUseCase {
         }
 
         String passwordGenerated = generateRandomPassword(12);
-        customerDto.setPassword(passwordGenerated);
+        customerDto.setPassword(passwordEncoder.encode(passwordGenerated));
         customerDto.setActive(1);
+        customerDto.setRol(Roles.CUSTOMER);
         iCustomerRepository.save(customerDto);
         return new CustomerResponseDto(passwordGenerated);
     }
