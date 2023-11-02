@@ -4,6 +4,7 @@ import drako.cars.domain.dto.CustomerDto;
 import drako.cars.domain.dto.CustomerResponseDto;
 import drako.cars.domain.repository.ICustomerRepository;
 import drako.cars.domain.usecase.ICustomerUseCase;
+import drako.cars.exception.CustomerExistsException;
 import drako.cars.exception.EmailValidationException;
 import drako.cars.security.Roles;
 import lombok.RequiredArgsConstructor;
@@ -45,9 +46,12 @@ public class CustomerService implements ICustomerUseCase {
         String regexEmail = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
                 + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
 
-
         if (!customerDto.getEmail().matches(regexEmail)) {
             throw new EmailValidationException();
+        }
+
+        if (getCustomerByCardId(customerDto.getCardId()).isPresent() || getCustomerByEmail(customerDto.getEmail()).isPresent()) {
+            throw new CustomerExistsException();
         }
 
         String passwordGenerated = generateRandomPassword(12);
